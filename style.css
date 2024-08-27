@@ -1,0 +1,97 @@
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+}
+
+#game-container {
+    width: 600px;
+    height: 200px;
+    border: 2px solid #333;
+    position: relative;
+    background-color: #87ceeb; /* Light blue sky */
+    overflow: hidden;
+}
+
+#score, #high-score {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-size: 20px;
+    color: #333;
+    font-family: Arial, sans-serif;
+}
+
+#high-score {
+    left: auto;
+    right: 10px; /* Align high score to the right */
+}
+
+#dino {
+    position: absolute;
+    bottom: 0;
+    left: 50px;
+    display: flex;
+    align-items: flex-end;
+    z-index: 1; /* So that T-Rex is on top of the obstacle */
+}
+
+.dino-head {
+    width: 30px;
+    height: 30px;
+    background-color: #ff5733; /* Red color for the dino head */
+    border-radius: 50%;
+    position: relative;
+    top: -20px;
+    left: 10px;
+}
+
+.dino-body {
+    width: 50px;
+    height: 40px;
+    background-color: #ff5733; /* Red color for the dino body */
+    border-radius: 10px;
+}
+
+.dino-arm {
+    width: 10px;
+    height: 20px;
+    background-color: #ff5733; /* Red color for the dino arm */
+    border-radius: 5px;
+    position: absolute;
+    top: 20px;
+    left: 5px;
+}
+
+.dino-leg {
+    width: 10px;
+    height: 20px;
+    background-color: #ff5733; /* Red color for the dino leg */
+    border-radius: 5px;
+    position: absolute;
+    bottom: 0;
+    left: 10px;
+}
+
+#obstacle {
+    width: 30px;
+    height: 50px;
+    background-color: #4caf50; /* Green color for the obstacle */
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    animation: moveObstacle 2s linear infinite;
+}
+
+@keyframes moveObstacle {
+    from {
+        right: -30px;
+    }
+    to {
+        right: 100%;
+    }
+}
